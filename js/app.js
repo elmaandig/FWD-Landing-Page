@@ -8,7 +8,7 @@ const sectionsIDs = sections.map(sec => sec.id);
 const navItemsData = sections.map(sec => sec.getAttribute("data-nav"));
 
 /* Helper Functions */
-//scrolling behaviour
+//scrolling behavior
 const scrollTo = (e) => {
     e.preventDefault();
     const target = e.target.getAttribute("data-scroll-to");
@@ -19,12 +19,14 @@ const scrollTo = (e) => {
 
 const isInViewport = (elem) => {
     const { top, bottom } = elem.getBoundingClientRect();
-    const winHeight = window.innerHeight || document.documentElement.clientHeight;
+    const winHeight = window.innerHeight || 
+    document.documentElement.clientHeight;
 
     return bottom >= 0 && top <= winHeight
 };
 //Setting the backTo Top button rules
-const showBackToTop = () => window.addEventListener("scroll", () => scrollBtn.classList.toggle("backToTop--active", window.scrollY > 500));
+const showBackToTop = () => window.addEventListener("scroll", () => 
+scrollBtn.classList.toggle("backToTop--active", window.scrollY > 500));
 
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
